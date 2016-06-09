@@ -1,0 +1,11 @@
+<resources>
+    <!-- Global -->
+    <string name="app_name">"NewEvolve"</string>
+    <string name="app_company">Gaius &amp; Hart Solutions</string>
+
+    <string name="app_title">NewEvolve</string>
+    <string name="app_subtitle">App-assisted Pen &amp; Paper RPG</string>
+
+    <!-- Login -->
+    <string name="login_button_signin">Click Here to Log-in!</string>
+</resources>

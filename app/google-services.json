@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "86445746900",
+    "firebase_url": "https://project-4372801298752724983.firebaseio.com",
+    "project_id": "project-4372801298752724983",
+    "storage_bucket": "project-4372801298752724983.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86445746900:android:a6a63563473fbac2",
+        "android_client_info": {
+          "package_name": "io.github.gaiusandhartsolutions.newevolve"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "86445746900-i2j0t2rqms7t2rc445vun3o6shqaohc6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFG5qZv0IN-aCn1HrXs9B0qSFzRL2OQ0U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
