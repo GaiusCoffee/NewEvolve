@@ -77,7 +77,7 @@ public class App extends Application {
     public String getFromLocalConfig(String key) {
         if (LocalConfig == null) {
             LocalConfig = getApplicationContext().
-                    getSharedPreferences(getString(R.string.app_ldb), MODE_PRIVATE);
+                    getSharedPreferences(getString(R.string.app_localconfig), MODE_PRIVATE);
         }
         return LocalConfig.getString(key, "");
     }
@@ -85,7 +85,7 @@ public class App extends Application {
     public void setToLocalConfig(String key, String value) {
         if (LocalConfig == null) {
             LocalConfig = getApplicationContext().
-                    getSharedPreferences(getString(R.string.app_ldb), MODE_PRIVATE);
+                    getSharedPreferences(getString(R.string.app_localconfig), MODE_PRIVATE);
         }
         SharedPreferences.Editor editor = LocalConfig.edit();
         editor.putString(key, value);
