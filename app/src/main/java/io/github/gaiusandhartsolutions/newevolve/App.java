@@ -1,7 +1,6 @@
 package io.github.gaiusandhartsolutions.newevolve;
 
 import android.app.Application;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -21,7 +20,6 @@ public class App extends Application {
     public static final String AUTH_EMAIL = "AUTH_EMAIL";
     public static final String AUTH_PHOTOURL = "AUTH_PHOTOURL";
     // Variables
-    private Context context;
     private FirebaseAnalytics fAnalytics;
     private FirebaseAuth fAuth;
     private FirebaseRemoteConfig fRemoteConfig;
@@ -32,9 +30,7 @@ public class App extends Application {
         super();
     }
 
-    public void setContext(Context ctx) {
-        context = ctx;
-        LocalConfig = ctx.getSharedPreferences(getString(R.string.app_ldb), MODE_PRIVATE);
+    public void Initialize() {
         fRemoteConfig = FirebaseRemoteConfig.getInstance();
         FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
                 //.setDeveloperModeEnabled(BuildConfig.DEBUG)
@@ -79,10 +75,18 @@ public class App extends Application {
     }
 
     public String getFromLocalConfig(String key) {
+        if (LocalConfig == null) {
+            LocalConfig = getApplicationContext().
+                    getSharedPreferences(getString(R.string.app_ldb), MODE_PRIVATE);
+        }
         return LocalConfig.getString(key, "");
     }
 
     public void setToLocalConfig(String key, String value) {
+        if (LocalConfig == null) {
+            LocalConfig = getApplicationContext().
+                    getSharedPreferences(getString(R.string.app_ldb), MODE_PRIVATE);
+        }
         SharedPreferences.Editor editor = LocalConfig.edit();
         editor.putString(key, value);
         editor.commit();

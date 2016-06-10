@@ -36,12 +36,11 @@ public class LoginActivity extends AppCompatActivity
 
         /* Initialize Global App Object */
         A = (App) getApplication();
-        A.setContext(getApplicationContext());
+        A.Initialize();
 
         /* Check if already logged in */
         if (A.getAuth().getCurrentUser() != null) {
             goToMain();
-            return;
         }
 
         /* Initialize Google Objects */
@@ -61,6 +60,7 @@ public class LoginActivity extends AppCompatActivity
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                signInButton.setEnabled(false);
                 A.logUITouch("sign_in_button", "button");
                 Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
                 startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -78,6 +78,7 @@ public class LoginActivity extends AppCompatActivity
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            final SignInButton signInButton = (SignInButton) findViewById(R.id.sign_in_button);
             if (result.isSuccess()) {
                 GoogleSignInAccount account = result.getSignInAccount();
 
@@ -96,6 +97,7 @@ public class LoginActivity extends AppCompatActivity
                                 if (!task.isSuccessful()) {
                                     Toast.makeText(LoginActivity.this,
                                             "Firebase Signin Failed :(", Toast.LENGTH_SHORT).show();
+                                    signInButton.setEnabled(true);
                                 } else {
                                     goToMain();
                                 }
@@ -103,11 +105,13 @@ public class LoginActivity extends AppCompatActivity
                         });
             } else {
                 Toast.makeText(this, "Google Signin Failed :(", Toast.LENGTH_SHORT).show();
+                signInButton.setEnabled(true);
             }
         }
     }
 
     public void goToMain() {
+        Toast.makeText(LoginActivity.this, "Google Signin Success :)", Toast.LENGTH_SHORT).show();
         // TODO: Go to Main
     }
 }
