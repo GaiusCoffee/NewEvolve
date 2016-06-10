@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.crash.FirebaseCrash;
 
 /**
  * Created by erik.capistrano on 6/9/2016.
@@ -55,6 +56,10 @@ public class App extends Application {
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, UIName);
         bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, UIType);
         this.getLogger().logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+    }
+
+    public void logException(Exception ex) {
+        FirebaseCrash.report(ex);
     }
 
     public String getFromLDB(String key) {
