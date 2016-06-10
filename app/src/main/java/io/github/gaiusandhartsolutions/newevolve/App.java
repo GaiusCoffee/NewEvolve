@@ -8,6 +8,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.crash.FirebaseCrash;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
@@ -20,6 +21,7 @@ public class App extends Application {
     public static final String AUTH_EMAIL = "AUTH_EMAIL";
     public static final String AUTH_PHOTOURL = "AUTH_PHOTOURL";
     // Variables
+    private FirebaseDatabase fDatabase;
     private FirebaseAnalytics fAnalytics;
     private FirebaseAuth fAuth;
     private FirebaseRemoteConfig fRemoteConfig;
@@ -43,6 +45,13 @@ public class App extends Application {
                         fRemoteConfig.activateFetched();
                     }
                 });
+    }
+
+    public FirebaseDatabase getDB() {
+        if (fDatabase == null) {
+            fDatabase = FirebaseDatabase.getInstance();
+        }
+        return fDatabase;
     }
 
     public FirebaseAnalytics getLogger() {

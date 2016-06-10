@@ -10,12 +10,6 @@
     <string name="app_title">Lorekeeper APPRPG</string>
     <string name="app_subtitle">App-assisted Pen &amp; Paper RPG</string>
 
-    <!-- Login -->
-    <string name="login_button_signin">Click Here to Log-in!</string>
-    <string name="title_activity_main">MainActivity</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
+    <!-- MainActivity -->
+    <string name="main_menuitem_settings">Settings</string>
 </resources>

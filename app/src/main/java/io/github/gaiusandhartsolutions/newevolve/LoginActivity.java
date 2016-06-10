@@ -112,6 +112,8 @@ public class LoginActivity extends AppCompatActivity
 
     public void goToMain() {
         Toast.makeText(LoginActivity.this, "Google Signin Success :)", Toast.LENGTH_SHORT).show();
-        // TODO: Go to Main
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
