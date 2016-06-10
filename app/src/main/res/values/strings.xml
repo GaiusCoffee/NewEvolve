@@ -1,11 +1,21 @@
 <resources>
     <!-- Global -->
+    <string name="app_package">io.github.gaiusandhartsolutions.newevolve</string>
+    <string name="app_ldb">io.github.gaiusandhartsolutions.newevolve.ldb</string>
+
     <string name="app_name">"NewEvolve"</string>
     <string name="app_company">Gaius &amp; Hart Solutions</string>
+    <string name="app_webclientid">86445746900-i2j0t2rqms7t2rc445vun3o6shqaohc6.apps.googleusercontent.com</string>
 
     <string name="app_title">NewEvolve</string>
     <string name="app_subtitle">App-assisted Pen &amp; Paper RPG</string>
 
     <!-- Login -->
     <string name="login_button_signin">Click Here to Log-in!</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

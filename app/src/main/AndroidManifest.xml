@@ -11,9 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".LoginActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/app_title"
-            android:theme="@style/FullscreenTheme">
+            android:label="@string/app_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
