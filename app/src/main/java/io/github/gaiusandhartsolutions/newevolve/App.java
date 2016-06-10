@@ -5,9 +5,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.crash.FirebaseCrash;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
 /**
  * Created by erik.capistrano on 6/9/2016.
@@ -21,34 +24,43 @@ public class App extends Application {
     private Context context;
     private FirebaseAnalytics fAnalytics;
     private FirebaseAuth fAuth;
-    private SharedPreferences LDB;
+    private FirebaseRemoteConfig fRemoteConfig;
+    private SharedPreferences LocalConfig;
 
     // Constructor
     public App(){
         super();
     }
 
-    public void setContext(Context context) {
-        this.context = context;
-        this.LDB = context.getSharedPreferences(getString(R.string.app_ldb), MODE_PRIVATE);
+    public void setContext(Context ctx) {
+        context = ctx;
+        LocalConfig = ctx.getSharedPreferences(getString(R.string.app_ldb), MODE_PRIVATE);
+        fRemoteConfig = FirebaseRemoteConfig.getInstance();
+        FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                //.setDeveloperModeEnabled(BuildConfig.DEBUG)
+                .build();
+        fRemoteConfig.setConfigSettings(configSettings);
+        fRemoteConfig.fetch()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        fRemoteConfig.activateFetched();
+                    }
+                });
     }
 
     public FirebaseAnalytics getLogger() {
-        return this.getLogger(this.context);
-    }
-
-    public FirebaseAnalytics getLogger(Context x) {
         if (fAnalytics == null) {
-            fAnalytics = FirebaseAnalytics.getInstance(x);
+            fAnalytics = FirebaseAnalytics.getInstance(getApplicationContext());
         }
-        return this.fAnalytics;
+        return fAnalytics;
     }
 
     public FirebaseAuth getAuth() {
         if (fAuth == null) {
             fAuth = FirebaseAuth.getInstance();
         }
-        return this.fAuth;
+        return fAuth;
     }
 
     public void logUITouch(String UIName, String UIType) {
@@ -62,12 +74,16 @@ public class App extends Application {
         FirebaseCrash.report(ex);
     }
 
-    public String getFromLDB(String key) {
-        return LDB.getString(key, "");
+    public String getFromRemoteConfig(String key) {
+        return fRemoteConfig.getString(key);
     }
 
-    public void setToLDB(String key, String value) {
-        SharedPreferences.Editor editor = LDB.edit();
+    public String getFromLocalConfig(String key) {
+        return LocalConfig.getString(key, "");
+    }
+
+    public void setToLocalConfig(String key, String value) {
+        SharedPreferences.Editor editor = LocalConfig.edit();
         editor.putString(key, value);
         editor.commit();
     }

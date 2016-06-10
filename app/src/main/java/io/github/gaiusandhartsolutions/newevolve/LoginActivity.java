@@ -82,9 +82,9 @@ public class LoginActivity extends AppCompatActivity
                 GoogleSignInAccount account = result.getSignInAccount();
 
                 // LDB Auth
-                A.setToLDB(App.AUTH_NAME, account.getDisplayName());
-                A.setToLDB(App.AUTH_EMAIL, account.getEmail());
-                A.setToLDB(App.AUTH_PHOTOURL, account.getPhotoUrl().toString());
+                A.setToLocalConfig(App.AUTH_NAME, account.getDisplayName());
+                A.setToLocalConfig(App.AUTH_EMAIL, account.getEmail());
+                A.setToLocalConfig(App.AUTH_PHOTOURL, account.getPhotoUrl().toString());
 
                 // Firebase Auth
                 AuthCredential credential = GoogleAuthProvider.getCredential(
