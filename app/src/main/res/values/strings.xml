@@ -20,5 +20,7 @@
     <string name="settings_hideArchivedAdventurers">Hide Archived Adventurers</string>
     <string name="settings_button_apply">Apply</string>
     <string name="settings_button_signout">Sign Out</string>
+    <string name="title_activity_adventures_fragment">AdventuresFragment</string>
+    <string name="title_activity_adventurers_fragment">AdventurersFragment</string>
 
 </resources>

@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.mToolbar);
-        setSupportActionBar(toolbar);
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+        }
         final ActionBar ab = getSupportActionBar();
         ab.setTitle(getString(R.string.app_title_short));
 
@@ -39,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                ImageView imageView = (ImageView) findViewById(R.id.mImageView);
+                if (tab.getText().equals(Engine.TAB_Adventures)) {
+                    imageView.setImageResource(R.drawable.colored_desert);
+                }
+                if (tab.getText().equals(Engine.TAB_Adventurers)) {
+                    imageView.setImageResource(R.drawable.colored_castle);
+                }
                 viewPager.setCurrentItem(tab.getPosition());
             }
             @Override
@@ -54,10 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        //adapter.addFrag(new FloatingLabelsFragment(), "Floating Labels");
-        //adapter.addFrag(new FABLayoutFragment(), "FAB");
-        //adapter.addFrag(new SnackBarFragment(), "Snackbar");
-        //adapter.addFrag(new CoordinatorFragment(), "Coordinator Layout");
+        adapter.addFrag(new AdventuresFragment(), Engine.TAB_Adventures);
+        adapter.addFrag(new AdventurersFragment(), Engine.TAB_Adventurers);
         viewPager.setAdapter(adapter);
     }
 
