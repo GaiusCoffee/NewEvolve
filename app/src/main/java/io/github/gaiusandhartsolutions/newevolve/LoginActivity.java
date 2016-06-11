@@ -38,6 +38,14 @@ public class LoginActivity extends AppCompatActivity
         A = (App) getApplication();
         A.Initialize();
 
+        /* Set default config */
+        if (A.getFromLocalConfig(Engine.CONFIG_hideArchivedAdventurers) == "") {
+            A.setToLocalConfig(Engine.CONFIG_hideArchivedAdventurers, String.valueOf(true));
+        }
+        if (A.getFromLocalConfig(Engine.CONFIG_hideInactiveAdventures) == "") {
+            A.setToLocalConfig(Engine.CONFIG_hideInactiveAdventures, String.valueOf(true));
+        }
+
         /* Check if already logged in */
         if (A.getAuth().getCurrentUser() != null) {
             goToMain();
@@ -82,10 +90,10 @@ public class LoginActivity extends AppCompatActivity
             if (result.isSuccess()) {
                 GoogleSignInAccount account = result.getSignInAccount();
 
-                // LDB Auth
-                A.setToLocalConfig(App.AUTH_NAME, account.getDisplayName());
-                A.setToLocalConfig(App.AUTH_EMAIL, account.getEmail());
-                A.setToLocalConfig(App.AUTH_PHOTOURL, account.getPhotoUrl().toString());
+                // Save Auth to LocalConfig
+                A.setToLocalConfig(Engine.AUTH_NAME, account.getDisplayName());
+                A.setToLocalConfig(Engine.AUTH_EMAIL, account.getEmail());
+                A.setToLocalConfig(Engine.AUTH_PHOTOURL, account.getPhotoUrl().toString());
 
                 // Firebase Auth
                 AuthCredential credential = GoogleAuthProvider.getCredential(

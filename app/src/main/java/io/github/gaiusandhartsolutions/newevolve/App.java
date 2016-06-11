@@ -16,10 +16,6 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
  * Created by erik.capistrano on 6/9/2016.
  */
 public class App extends Application {
-    // Constants
-    public static final String AUTH_NAME = "AUTH_NAME";
-    public static final String AUTH_EMAIL = "AUTH_EMAIL";
-    public static final String AUTH_PHOTOURL = "AUTH_PHOTOURL";
     // Variables
     private FirebaseDatabase fDatabase;
     private FirebaseAnalytics fAnalytics;
@@ -33,6 +29,8 @@ public class App extends Application {
     }
 
     public void Initialize() {
+        LocalConfig = getApplicationContext().
+                getSharedPreferences(getString(R.string.app_localconfig), MODE_PRIVATE);
         fRemoteConfig = FirebaseRemoteConfig.getInstance();
         FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
                 //.setDeveloperModeEnabled(BuildConfig.DEBUG)
@@ -84,18 +82,10 @@ public class App extends Application {
     }
 
     public String getFromLocalConfig(String key) {
-        if (LocalConfig == null) {
-            LocalConfig = getApplicationContext().
-                    getSharedPreferences(getString(R.string.app_localconfig), MODE_PRIVATE);
-        }
         return LocalConfig.getString(key, "");
     }
 
     public void setToLocalConfig(String key, String value) {
-        if (LocalConfig == null) {
-            LocalConfig = getApplicationContext().
-                    getSharedPreferences(getString(R.string.app_localconfig), MODE_PRIVATE);
-        }
         SharedPreferences.Editor editor = LocalConfig.edit();
         editor.putString(key, value);
         editor.commit();
