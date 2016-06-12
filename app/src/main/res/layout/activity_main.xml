@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="256dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/colored_desert"
+                android:src="@drawable/colored_forest"
                 app:layout_collapseMode="parallax" />
 
             <android.support.v7.widget.Toolbar

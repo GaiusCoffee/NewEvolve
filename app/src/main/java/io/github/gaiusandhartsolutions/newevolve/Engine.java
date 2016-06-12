@@ -10,6 +10,8 @@ public class Engine {
     public static final String AUTH_PHOTOURL = "photourl";
     public static final String CONFIG_hideArchivedAdventurers = "hideArchivedAdventurers";
     public static final String CONFIG_hideInactiveAdventures = "hideInactiveAdventures";
+    public static final String TAB_Library = "Library";
     public static final String TAB_Adventures = "Adventures";
     public static final String TAB_Adventurers = "Adventurers";
+    public static final String TAB_Forge = "Forge";
 }
