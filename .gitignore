@@ -8,3 +8,5 @@
 /captures
 gradle.properties
 vcs.xml
+/.idea/gradle.xml
+/.idea/misc.xml
