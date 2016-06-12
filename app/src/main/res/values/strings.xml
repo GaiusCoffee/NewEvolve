@@ -11,6 +11,18 @@
     <string name="app_title">Lorekeeper APPRPG</string>
     <string name="app_subtitle">App-assisted Pen &amp; Paper RPG</string>
 
+    <string name="tab_library">Library</string>
+    <string name="tab_adventures">Adventures</string>
+    <string name="tab_adventurers">Adventurers</string>
+    <!-- <string name="tab_forge">Forge</string> -->
+
+    <string name="book_lkm">Lorekeeper\'s Manual</string>
+    <string name="book_lkm_subtitle">Worldbuilding &amp; Adventurer Wrangling</string>
+    <string name="book_agb">Adventurer\'s Guidebook</string>
+    <string name="book_agb_subtitle">Sword, Sorcery and Socializing 101</string>
+    <!-- <string name="book_f">Forge</string> -->
+    <!-- <string name="book_f_subtitle"></string> -->
+
     <!-- MainActivity -->
     <string name="main_menuitem_settings">Settings</string>
 
@@ -22,5 +34,11 @@
     <string name="settings_button_signout">Sign Out</string>
     <string name="title_activity_adventures_fragment">AdventuresFragment</string>
     <string name="title_activity_adventurers_fragment">AdventurersFragment</string>
+    <string name="title_activity_book">BookActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 
 </resources>

@@ -33,6 +33,9 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
         holder.cardImageView.setImageResource(cardData.image);
         holder.cardTitleText.setText(cardData.title);
         holder.cardContentText.setText(cardData.content);
+        if (cardData.clickListener != null) {
+            holder.cardImageView.setOnClickListener(cardData.clickListener);
+        }
     }
 
     @Override

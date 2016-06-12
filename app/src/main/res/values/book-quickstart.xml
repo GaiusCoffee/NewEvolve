@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="book_qst">Quickstart</string>
+    <string name="book_qst_subtitle">&lt;-- Click here to learn how to play Lorekeeper APPRPG!</string>
+
+    <string name="bq_numberOfChapters">3</string>
+    <string name="bq_c1_title">Quickstart Title 1</string>
+    <string name="bq_c1_content">
+        <![CDATA[
+            <h1>Hello, World!</h1>
+            <p>
+                This is a test! Lorem ipsum.
+            </p>
+        ]]>
+    </string>
+    <string name="bq_c2_title">Quickstart Title 2</string>
+    <string name="bq_c2_content">
+        <![CDATA[
+            <h1>Hello, World!</h1>
+            <p>
+                This is a test! Lorem ipsum.
+            </p>
+        ]]>
+    </string>
+    <string name="bq_c3_title">Quickstart Title 3</string>
+    <string name="bq_c3_content">
+        <![CDATA[
+            <h1>Hello, World!</h1>
+            <p>
+                This is a test! Lorem ipsum.
+            </p>
+        ]]>
+    </string>
+</resources>

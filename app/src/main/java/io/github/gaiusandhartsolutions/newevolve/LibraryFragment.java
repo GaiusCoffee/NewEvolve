@@ -1,5 +1,6 @@
 package io.github.gaiusandhartsolutions.newevolve;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LibraryFragment extends Fragment {
+    private static final String TAG_BOOK = "book";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_library, container, false);
@@ -23,15 +26,30 @@ public class LibraryFragment extends Fragment {
 
         List<CardData> libraryData = new ArrayList<CardData>();
         libraryData.add(new CardData(R.drawable.book_quickstart,
-                "Quickstart", "<-- Click here to learn how to play Lorekeeper APPRPG!"));
+                getString(R.string.book_qst), getString(R.string.book_qst_subtitle),
+                OnBookClick(getString(R.string.book_qst))));
         libraryData.add(new CardData(R.drawable.book_lkm,
-                "Lorekeeper's Manual", "Worldbuilding & Adventurer Wrangling"));
+                getString(R.string.book_lkm), getString(R.string.book_lkm_subtitle),
+                OnBookClick(getString(R.string.book_lkm))));
         libraryData.add(new CardData(R.drawable.book_agb,
-                "Adventurer's Guidebook", "Sword, Sorcery and Socializing 101"));
+                getString(R.string.book_agb), getString(R.string.book_agb_subtitle),
+                OnBookClick(getString(R.string.book_agb))));
         //libraryData.add(new CardData(R.drawable.book_forge,
         //        "Forge", "Lorem Ipsum."));
 
         recyclerView.setAdapter(new CardAdapter(libraryData));
         return rootView;
+    }
+
+    public View.OnClickListener OnBookClick(final String tag){
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), BookActivity.class);
+                intent.putExtra(TAG_BOOK, tag);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        };
     }
 }

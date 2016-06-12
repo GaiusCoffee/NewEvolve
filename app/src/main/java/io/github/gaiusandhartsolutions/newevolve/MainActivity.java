@@ -43,18 +43,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 ImageView imageView = (ImageView) findViewById(R.id.mImageView);
-                if (tab.getText().equals(Engine.TAB_Library)) {
+                if (tab.getText().equals(getString(R.string.tab_library))) {
                     imageView.setImageResource(R.drawable.colored_forest);
                 }
-                if (tab.getText().equals(Engine.TAB_Adventures)) {
+                if (tab.getText().equals(getString(R.string.tab_adventures))) {
                     imageView.setImageResource(R.drawable.colored_desert);
                 }
-                if (tab.getText().equals(Engine.TAB_Adventurers)) {
+                if (tab.getText().equals(getString(R.string.tab_adventurers))) {
                     imageView.setImageResource(R.drawable.colored_castle);
                 }
-                if (tab.getText().equals(Engine.TAB_Forge)) {
-                    imageView.setImageResource(R.drawable.colored_talltrees);
-                }
+                //if (tab.getText().equals(getString(R.string.tab_forge))) {
+                //    imageView.setImageResource(R.drawable.colored_talltrees);
+                //}
                 viewPager.setCurrentItem(tab.getPosition());
             }
             @Override
@@ -70,9 +70,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new LibraryFragment(), Engine.TAB_Library);
-        adapter.addFrag(new AdventuresFragment(), Engine.TAB_Adventures);
-        adapter.addFrag(new AdventurersFragment(), Engine.TAB_Adventurers);
+        adapter.addFrag(new LibraryFragment(), getString(R.string.tab_library));
+        adapter.addFrag(new AdventuresFragment(), getString(R.string.tab_adventures));
+        adapter.addFrag(new AdventurersFragment(), getString(R.string.tab_adventurers));
         // adapter.addFrag(new ForgeFragment(), Engine.TAB_Forge);
         viewPager.setAdapter(adapter);
     }
