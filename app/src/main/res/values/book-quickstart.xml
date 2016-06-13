@@ -12,7 +12,7 @@
             </p>
         ]]>
     </string>
-    <string name="bq_c2_title">Quickstart Title 2</string>
+    <string name="bq_c2_title">Wait</string>
     <string name="bq_c2_content">
         <![CDATA[
             <h1>Hello, World!</h1>
@@ -21,7 +21,7 @@
             </p>
         ]]>
     </string>
-    <string name="bq_c3_title">Quickstart Title 3</string>
+    <string name="bq_c3_title">Wut</string>
     <string name="bq_c3_content">
         <![CDATA[
             <h1>Hello, World!</h1>
@@ -32,10 +32,10 @@
     </string>
 
 
-    <string name="bq_c4_title">Quickstart Title 4</string>
-    <string name="bq_c5_title">Quickstart Title 5</string>
-    <string name="bq_c6_title">Quickstart Title 6</string>
-    <string name="bq_c7_title">Quickstart Title 7</string>
-    <string name="bq_c8_title">Quickstart Title 8</string>
-    <string name="bq_c9_title">Quickstart Title 9</string>
+    <string name="bq_c4_title"></string>
+    <string name="bq_c5_title"></string>
+    <string name="bq_c6_title"></string>
+    <string name="bq_c7_title"></string>
+    <string name="bq_c8_title"></string>
+    <string name="bq_c9_title"></string>
 </resources>
