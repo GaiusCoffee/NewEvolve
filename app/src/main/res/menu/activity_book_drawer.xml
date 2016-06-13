@@ -3,33 +3,54 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_book_quickstart"
+            android:icon="@drawable/book_quickstart"
+            android:title="@string/book_qst" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_book_lkm"
+            android:icon="@drawable/book_lkm"
+            android:title="@string/book_lkm" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_book_agb"
+            android:icon="@drawable/book_agb"
+            android:title="@string/book_agb" />
+        <!--
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_book_f"
+            android:icon="@drawable/book_f"
+            android:title="@string/book_f" />
+        -->
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Chapter Index">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_book_c1"
+                android:title="Chapter 1" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_book_c2"
+                android:title="Chapter 2" />
+            <item
+                android:id="@+id/nav_book_c3"
+                android:title="Chapter 3" />
+            <item
+                android:id="@+id/nav_book_c4"
+                android:title="Chapter 4" />
+            <item
+                android:id="@+id/nav_book_c5"
+                android:title="Chapter 5" />
+            <item
+                android:id="@+id/nav_book_c6"
+                android:title="Chapter 6" />
+            <item
+                android:id="@+id/nav_book_c7"
+                android:title="Chapter 7" />
+            <item
+                android:id="@+id/nav_book_c8"
+                android:title="Chapter 8" />
+            <item
+                android:id="@+id/nav_book_c9"
+                android:title="Chapter 9" />
         </menu>
     </item>
 

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,6 +15,7 @@ import android.view.View;
 
 public class BookActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private String book_contents = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +28,12 @@ public class BookActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.book_drawer_layout);
+                drawer.openDrawer(GravityCompat.START);
+                /*
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                */
             }
         });
 
@@ -41,6 +45,23 @@ public class BookActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.book_nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Intent intent = getIntent();
+        this.book_contents = intent.getStringExtra(Engine.TAG_BOOK);
+        MenuItem nav_book_quickstart = (MenuItem) findViewById(R.id.nav_book_quickstart);
+        MenuItem nav_book_lkm = (MenuItem) findViewById(R.id.nav_book_lkm);
+        MenuItem nav_book_agb = (MenuItem) findViewById(R.id.nav_book_agb);
+        // MenuItem nav_book_f = (MenuItem)findViewById(R.id.nav_book_f);
+        if (this.book_contents.equals(getString(R.string.book_qst))) {
+            nav_book_quickstart.setChecked(true);
+        }
+        if (this.book_contents.equals(getString(R.string.book_lkm))) {
+            nav_book_lkm.setChecked(true);
+        }
+        if (this.book_contents.equals(getString(R.string.book_agb))) {
+            nav_book_agb.setChecked(true);
+        }
+
     }
 
     @Override
@@ -49,7 +70,7 @@ public class BookActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            goToMain();
         }
     }
 
@@ -84,6 +105,7 @@ public class BookActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        /*
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
@@ -97,6 +119,7 @@ public class BookActivity extends AppCompatActivity
         } else if (id == R.id.nav_send) {
 
         }
+        */
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.book_drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

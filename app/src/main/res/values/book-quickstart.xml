@@ -3,7 +3,6 @@
     <string name="book_qst">Quickstart</string>
     <string name="book_qst_subtitle">&lt;-- Click here to learn how to play Lorekeeper APPRPG!</string>
 
-    <string name="bq_numberOfChapters">3</string>
     <string name="bq_c1_title">Quickstart Title 1</string>
     <string name="bq_c1_content">
         <![CDATA[
@@ -31,4 +30,12 @@
             </p>
         ]]>
     </string>
+
+
+    <string name="bq_c4_title">Quickstart Title 4</string>
+    <string name="bq_c5_title">Quickstart Title 5</string>
+    <string name="bq_c6_title">Quickstart Title 6</string>
+    <string name="bq_c7_title">Quickstart Title 7</string>
+    <string name="bq_c8_title">Quickstart Title 8</string>
+    <string name="bq_c9_title">Quickstart Title 9</string>
 </resources>

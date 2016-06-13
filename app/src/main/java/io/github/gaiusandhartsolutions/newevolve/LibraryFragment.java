@@ -13,8 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LibraryFragment extends Fragment {
-    private static final String TAG_BOOK = "book";
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_library, container, false);
@@ -46,7 +44,7 @@ public class LibraryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), BookActivity.class);
-                intent.putExtra(TAG_BOOK, tag);
+                intent.putExtra(Engine.TAG_BOOK, tag);
                 startActivity(intent);
                 getActivity().finish();
             }
