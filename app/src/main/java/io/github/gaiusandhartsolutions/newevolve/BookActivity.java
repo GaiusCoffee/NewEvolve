@@ -65,11 +65,17 @@ public class BookActivity extends AppCompatActivity
         MenuItem nav_book_c9 = navigationView.getMenu().findItem(R.id.nav_book_c9);
         ImageView book_nav_imageView = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.book_nav_imageView);
         TextView book_nav_title = (TextView) navigationView.getHeaderView(0).findViewById(R.id.book_nav_title);
+        ImageView book_image = (ImageView) findViewById(R.id.book_image);
+        TextView book_title = (TextView) findViewById(R.id.book_title);
+        TextView book_content = (TextView) findViewById(R.id.book_content);
 
         if (this.book_contents.equals(getString(R.string.book_qst))) {
             nav_book_quickstart.setChecked(true);
             book_nav_imageView.setImageResource(R.drawable.book_quickstart);
             book_nav_title.setText(getString(R.string.book_qst));
+            book_image.setImageResource(R.drawable.book_quickstart);
+            book_title.setText(getString(R.string.bq_c1_title));
+            book_content.setText(getString(R.string.bq_c1_content));
             if (getString(R.string.bq_c1_title).equals("")) {
                 nav_book_c1.setVisible(false);
             } else {
