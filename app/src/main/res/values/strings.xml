@@ -34,7 +34,7 @@
     <string name="settings_button_signout">Sign Out</string>
     <string name="title_activity_adventures_fragment">AdventuresFragment</string>
     <string name="title_activity_adventurers_fragment">AdventurersFragment</string>
-    <string name="title_activity_book">BookActivity</string>
+    <string name="title_activity_book">Lorekeeper\'s Library</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

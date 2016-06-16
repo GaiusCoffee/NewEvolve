@@ -3,13 +3,21 @@
     <string name="book_qst">Quickstart</string>
     <string name="book_qst_subtitle">&lt;-- Click here to learn how to play Lorekeeper APPRPG!</string>
 
-    <string name="bq_c1_title">Quickstart Title 1</string>
+    <string name="bq_c1_title">1. Requirements</string>
     <string name="bq_c1_content">
         <![CDATA[
-            <h1>Hello, World!</h1>
             <p>
-                This is a test! Lorem ipsum.
+                In order to play Lorekeeper, this app alone is not enough! You\'d also need the
+                following:
             </p>
+            <ul>
+                <li>At least <b>four six-sided dice</b>, preferably four dice per person playing.</li>
+                <li>From <b>one to four other friends</b>, all with this application installed in their
+                smartphone. One of you would be the Lorekeeper, and the others would be the
+                adventurers</li>
+                <li><b>Pen, paper and props</b> are optional, but greatly improves how Lorekeeper is
+                played.</li>
+            </ul>
         ]]>
     </string>
     <string name="bq_c2_title">Wait</string>

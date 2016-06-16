@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -67,15 +68,18 @@ public class BookActivity extends AppCompatActivity
         TextView book_nav_title = (TextView) navigationView.getHeaderView(0).findViewById(R.id.book_nav_title);
         ImageView book_image = (ImageView) findViewById(R.id.book_image);
         TextView book_title = (TextView) findViewById(R.id.book_title);
-        TextView book_content = (TextView) findViewById(R.id.book_content);
+        WebView book_content = (WebView) findViewById(R.id.book_content);
 
         if (this.book_contents.equals(getString(R.string.book_qst))) {
             nav_book_quickstart.setChecked(true);
             book_nav_imageView.setImageResource(R.drawable.book_quickstart);
-            book_nav_title.setText(getString(R.string.book_qst));
+            book_nav_title.setText("Lorekeeper: " + getString(R.string.book_qst));
             book_image.setImageResource(R.drawable.book_quickstart);
             book_title.setText(getString(R.string.bq_c1_title));
-            book_content.setText(getString(R.string.bq_c1_content));
+            //book_content.setText(Html.fromHtml(getString(R.string.bq_c1_content)));
+            //book_content.setMovementMethod(LinkMovementMethod.getInstance());
+            book_content.loadDataWithBaseURL(null,
+                    getString(R.string.bq_c1_content), "text/html", "utf-8", null);
             if (getString(R.string.bq_c1_title).equals("")) {
                 nav_book_c1.setVisible(false);
             } else {

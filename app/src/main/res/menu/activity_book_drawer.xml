@@ -23,7 +23,7 @@
         -->
     </group>
 
-    <item android:title="Chapter Index">
+    <item android:title="Table of Contents">
         <menu>
             <item
                 android:id="@+id/nav_book_c1"
